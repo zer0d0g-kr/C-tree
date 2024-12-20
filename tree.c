@@ -10,8 +10,14 @@
 int main()
 {
         srand((unsigned int)time(NULL));
+
+		setvbuf(stdout, NULL, _IONBF, 0);
+
         while(1){
                 int height = 0, width = 0;
+
+				printf("\033[H\033[J");
+
                 for(height = 0;height <= 10;height++)
                 {
                         for(width=10;width>=height;width--)
@@ -57,7 +63,8 @@ int main()
                         printf("\n");
                 }
                 printf("\n\nMarry Christmas!!\n--zer0d0g\n");
+
+				fflush(stdout);
                 sleep(1);
-        system("clear");
         }
 }
